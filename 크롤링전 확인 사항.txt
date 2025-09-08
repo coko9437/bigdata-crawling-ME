@@ -1,0 +1,103 @@
+특정 도메인에서 크롤링 정책 확인.
+방법) 도메인 주소 뒤에 : /robots.txt
+
+예시)
+https://www.nate.com/robots.txt
+
+User-agent: *
+의미:
+따라서 이 규칙은 기본적으로 이 웹사이트의
+모든 페이지와 디렉토리에 대한 접근을 차단합니다.
+Disallow: /
+
+의미:
+따라서 /$는 https://example.com/ 처럼
+웹사이트의 가장 첫 페이지(홈페이지)만
+정확히 일치할 경우 크롤링을 허용한다는 뜻입니다.
+https://example.com/page1 등 하위 페이지는 해당되지 않습니다.
+Allow : /$
+Allow : /ads.txt
+Allow : /app-ads.txt
+Allow : /sellers.json
+
+결론,
+robots.txt 설정은
+검색 엔진이 웹사이트의 첫 페이지만 수집하여
+검색 결과에 노출시키고,
+그 외의 다른 모든 페이지(예: 게시글, 상품 페이지 등)는
+수집하지 못하도록 막는 강력한 차단 설정입니다.
+
+
+예시2)알라딘 중고서적
+https://www.aladin.co.kr/robots.txt
+
+User-agent: *
+
+Disallow: /aaintraweb/
+Disallow: /account/
+Disallow: /api/
+Disallow: /errormng/
+Disallow: /intranet/
+Disallow: /jiny/
+Disallow: /login/
+Disallow: /mail/
+Disallow: /mng/
+Disallow: /order/
+Disallow: /scm/
+Disallow: /search/
+Disallow: /Search/
+Disallow: /ttb/
+Disallow: /webservice/
+Disallow: /wservice/
+Disallow: /*?EventId=201357
+Disallow: /*?EventId=199338
+Disallow: /*?EventId=198631
+Disallow: /shop/book/wletslookViewerNew.aspx
+Disallow: /*.swf$
+Disallow: /shop/common/witemrelation.aspx
+Disallow: /usedstore/wsearchresult.aspx
+Disallow: /m/msearch.aspx
+
+Allow: /
+
+User-Agent: QuerySeekerSpider ( http://queryseeker.com/bot.html )
+Disallow: /
+User-agent: AhrefsBot
+
+Disallow: /
+User-agent: MJ12bot
+Disallow: /
+User-agent: SemrushBot
+Disallow: /
+User-agent: Baiduspider
+Disallow: /
+User-agent: Ezooms
+Disallow: /
+User-agent: YandexBot
+Disallow: /
+User-agent: ltx71
+Disallow: /
+User-agent: zgrab/0.x
+Disallow: /
+
+Sitemap: https://www.aladin.co.kr/ucl_editor/util/sitemap/sitemap.xml
+
+결론,
+일반 검색 엔진 (Google, Naver 등):
+개인정보, 관리자 페이지, 내부 검색 결과 등 불필요한 페이지만 막고,
+
+그 외 모든 중요한 콘텐츠는 수집을 허용하여 검색 노출을 극대화합니다.
+
+특정 봇 (SEO 도구, 일부 해외 봇 등):
+웹사이트 자원을 보호하고 정보 분석을 막기 위해 사이트 접근을 전면 차단합니다.
+
+사이트맵 제공:
+허용된 검색 엔진이 사이트 구조를 쉽게 파악하도록 돕습니다.
+
+
+
+
+
+
+
+
